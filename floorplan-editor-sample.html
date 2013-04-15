@@ -1,0 +1,63 @@
+<html>
+  <head>
+    <title>HTML5 Floorplan Editor Sample</title>
+    <script type="text/javascript" src="floorplan-canvas.js"></script>
+    <script type="text/javascript" src="floorplan-shapes.js"></script>
+    <script type="text/javascript" src="floorplan-editor.js"></script>
+  </head>
+  <body>
+    <h1>HTML5 Floorplan Editor</h1>
+    <p>Please edit the floorplan below.</p>
+    <canvas id="floorplan-editor" width="640" height="480"></canvas>
+
+    <script type="text/javascript">
+      var floorplanEditor = new FloorplanEditor({
+          canvasId: "floorplan-editor",
+          shapes: [
+              {
+                  id: "vr",
+                  type: "vaulted-room",
+                  center: {x: 5*12, y: 7*12},
+                  size: {length: 14*12, width: 10*12},
+                  rotation: -90,
+                  label: "Great Room"
+              },
+              {
+                  id: "cr",
+                  type: "cathedral-room",
+                  center: {x: 36*12, y: 6*12},
+                  size: {length: 12*12, width: 10*12},
+                  label: "Shed"
+              },
+              {
+                  id: "rr",
+                  type: "rect-room",
+                  center: {x: 20.5*12, y: 3*12},
+                  size: {length: 7*12, width: 6*12},
+                  label: "Bathroom"
+              },
+              {
+                  id: "lr",
+                  type: "l-shaped-room",
+                  center: {x: 17*12, y: 7*12},
+                  size: {length: 14*12, width: 14*12},
+                  cornerSize: {length: 7*12, width: 6*12},
+                  label: "Master Bedroom"
+              }
+          ]
+      });
+
+      // var zoom = 1.0;
+      // var offset = {x: 0, y: 0};
+      // var zoomAndTranslate = function() {
+      //     zoom *= 1.01;
+      //     offset.x += 1.5;
+      //     offset.y += 1.5;
+      //     floorplanEditor.setZoom(zoom);
+      //     floorplanEditor.setOffset(offset);
+      //     setTimeout(zoomAndTranslate, 100);
+      // }
+      // setTimeout(zoomAndTranslate, 100);
+    </script>
+  </body>
+</html>
