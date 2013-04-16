@@ -158,3 +158,17 @@ FloorplanCanvas.prototype.setOffset = function(offset) {
     this.offset = {x: offset.x, y: offset.y};
     this.draw();
 };
+
+FloorplanCanvas.prototype.translateByScreenDelta = function(delta) {
+    this.offset = {
+        x: this.offset.x + (delta.x / this.zoom),
+        y: this.offset.y + (delta.y / this.zoom)
+    };
+    this.draw();
+};
+
+FloorplanCanvas.prototype.scaleAtPagePoint = function(scale, center) {
+    this.zoom = this.zoom * scale;
+    // FIXME: Translate also, based on center
+    this.draw();
+};
