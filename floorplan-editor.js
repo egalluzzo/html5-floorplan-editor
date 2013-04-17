@@ -1,4 +1,9 @@
-function FloorplanEditor(config) {
+// Container for "use strict"
+(function() {
+
+"use strict";
+
+window.FloorplanEditor = function(config) {
     this.init(config);
 }
 
@@ -15,6 +20,7 @@ FloorplanEditor.prototype.init = function(config) {
     if (Hammer) {
         this.installHammerEventHandlers();
     }
+    this.installMouseEventHandlers();
 
     this.canvas.draw();
 };
@@ -67,3 +73,27 @@ FloorplanEditor.prototype.installHammerEventHandlers = function() {
         });
     })();
 };
+
+FloorplanEditor.prototype.installMouseEventHandlers = function() {
+    var editor = this;
+    (function() {
+        var lastPoint;
+        var lastScale;
+
+        // FIXME: Finish this.
+    })();
+};
+
+FloorplanEditor.prototype.addEventHandler = function(elem, eventType, eventHandler) {
+    if (elem.addEventHandler) {
+        elem.addEventHandler(eventType, eventHandler, false);
+    } else if (elem.attachEvent) {
+        elem.attachEvent("on" + eventType, function(e) {
+            var event = e || window.event;
+            eventHandler.call(elem, event);
+        });
+    }
+};
+
+// End container for "use strict"
+})();

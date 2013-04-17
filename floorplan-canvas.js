@@ -1,4 +1,9 @@
-function FloorplanCanvas(config) {
+// Start container for "use strict"
+(function() {
+
+"use strict";
+
+window.FloorplanCanvas = function(config) {
     this.init(config);
 }
 
@@ -172,3 +177,6 @@ FloorplanCanvas.prototype.scaleAtPagePoint = function(scale, center) {
     // FIXME: Translate also, based on center
     this.draw();
 };
+
+// End container for "use strict"
+})();

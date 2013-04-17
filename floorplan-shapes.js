@@ -1,3 +1,8 @@
+// Start container for "use strict"
+(function() {
+
+"use strict";
+
 /**
  * A shape has the following contract:
  *
@@ -17,7 +22,7 @@
  * Determines the bounding box of the shape.
  */
 
-FloorplanShapes = {};
+window.FloorplanShapes = {};
 
 FloorplanShapes.DEFAULT_STROKE_WIDTH = 2;
 FloorplanShapes.DEFAULT_STROKE_STYLE = "rgba(0, 0, 0, 0.8)";
@@ -153,3 +158,6 @@ FloorplanShapes.LShapedRoom.prototype.drawRoom = function(ctx, shape, canvas) {
     ctx.fill();
     ctx.stroke();
 };
+
+// End container for "use strict"
+})();
