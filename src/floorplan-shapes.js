@@ -29,6 +29,7 @@ FloorplanShapes.DEFAULT_STROKE_STYLE = "rgba(0, 0, 0, 0.8)";
 FloorplanShapes.DEFAULT_FILL_STYLE = "rgba(192, 192, 192, 0.8)";
 FloorplanShapes.VAULTED_FILL_STYLE = "rgba(255, 255, 255, 0.8)";
 FloorplanShapes.DEFAULT_FONT = "12px sans-serif";
+FloorplanShapes.DEFAULT_FONT_FILL_STYLE = "rgba(0, 0, 0, 0.8)";
 
 FloorplanShapes.GenericRoom = function(name) {
     this.name = name;
@@ -50,7 +51,8 @@ FloorplanShapes.GenericRoom.prototype.draw = function(ctx, shape, canvas) {
     ctx.font = FloorplanShapes.DEFAULT_FONT;
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
-    ctx.strokeText(shape.label, 0, 0);
+    ctx.fillStyle = FloorplanShapes.DEFAULT_FONT_FILL_STYLE;
+    ctx.fillText(shape.label, 0, 0);
 }
 
 FloorplanShapes.GenericRoom.prototype.drawRoom = function(ctx, shape, canvas) {
